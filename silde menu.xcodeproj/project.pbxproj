@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5D4E7F3F200E0D38009457F9 /* DeviceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4E7F3E200E0D38009457F9 /* DeviceTypes.swift */; };
-		5D59B68C200F4B92002B4C23 /* MenuBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59B688200F4B91002B4C23 /* MenuBarTableViewCell.swift */; };
-		5D59B68D200F4B92002B4C23 /* MenuBarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D59B689200F4B91002B4C23 /* MenuBarTableViewCell.xib */; };
-		5D59B68E200F4B92002B4C23 /* MenuBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D59B68A200F4B92002B4C23 /* MenuBarViewController.xib */; };
-		5D59B68F200F4B92002B4C23 /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59B68B200F4B92002B4C23 /* MenuBarViewController.swift */; };
+		5D59B694200F4C94002B4C23 /* MenuBarTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D59B690200F4C94002B4C23 /* MenuBarTableViewCell.xib */; };
+		5D59B695200F4C94002B4C23 /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59B691200F4C94002B4C23 /* MenuBarViewController.swift */; };
+		5D59B696200F4C94002B4C23 /* MenuBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D59B692200F4C94002B4C23 /* MenuBarViewController.xib */; };
+		5D59B697200F4C94002B4C23 /* MenuBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D59B693200F4C94002B4C23 /* MenuBarTableViewCell.swift */; };
 		5D880E80200DD5DA00D9CDF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D880E7F200DD5DA00D9CDF4 /* AppDelegate.swift */; };
 		5D880E82200DD5DA00D9CDF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D880E81200DD5DA00D9CDF4 /* ViewController.swift */; };
 		5D880E85200DD5DA00D9CDF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D880E83200DD5DA00D9CDF4 /* Main.storyboard */; };
@@ -23,10 +23,10 @@
 
 /* Begin PBXFileReference section */
 		5D4E7F3E200E0D38009457F9 /* DeviceTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceTypes.swift; sourceTree = "<group>"; };
-		5D59B688200F4B91002B4C23 /* MenuBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarTableViewCell.swift; sourceTree = "<group>"; };
-		5D59B689200F4B91002B4C23 /* MenuBarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBarTableViewCell.xib; sourceTree = "<group>"; };
-		5D59B68A200F4B92002B4C23 /* MenuBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBarViewController.xib; sourceTree = "<group>"; };
-		5D59B68B200F4B92002B4C23 /* MenuBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
+		5D59B690200F4C94002B4C23 /* MenuBarTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBarTableViewCell.xib; sourceTree = "<group>"; };
+		5D59B691200F4C94002B4C23 /* MenuBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
+		5D59B692200F4C94002B4C23 /* MenuBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuBarViewController.xib; sourceTree = "<group>"; };
+		5D59B693200F4C94002B4C23 /* MenuBarTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuBarTableViewCell.swift; sourceTree = "<group>"; };
 		5D880E7C200DD5DA00D9CDF4 /* silde menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "silde menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D880E7F200DD5DA00D9CDF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D880E81200DD5DA00D9CDF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -52,10 +52,10 @@
 		5D4E7F4B200F1C0A009457F9 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				5D59B688200F4B91002B4C23 /* MenuBarTableViewCell.swift */,
-				5D59B689200F4B91002B4C23 /* MenuBarTableViewCell.xib */,
-				5D59B68B200F4B92002B4C23 /* MenuBarViewController.swift */,
-				5D59B68A200F4B92002B4C23 /* MenuBarViewController.xib */,
+				5D59B693200F4C94002B4C23 /* MenuBarTableViewCell.swift */,
+				5D59B690200F4C94002B4C23 /* MenuBarTableViewCell.xib */,
+				5D59B691200F4C94002B4C23 /* MenuBarViewController.swift */,
+				5D59B692200F4C94002B4C23 /* MenuBarViewController.xib */,
 				5D59B67C200F3CD4002B4C23 /* Helper */,
 			);
 			path = Lib;
@@ -160,12 +160,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D59B68D200F4B92002B4C23 /* MenuBarTableViewCell.xib in Resources */,
+				5D59B694200F4C94002B4C23 /* MenuBarTableViewCell.xib in Resources */,
 				5D880E8D200DD5DA00D9CDF4 /* LaunchScreen.storyboard in Resources */,
 				5D880E9A200DD92D00D9CDF4 /* image (53).jpg in Resources */,
 				5D880E8A200DD5DA00D9CDF4 /* Assets.xcassets in Resources */,
 				5D880E85200DD5DA00D9CDF4 /* Main.storyboard in Resources */,
-				5D59B68E200F4B92002B4C23 /* MenuBarViewController.xib in Resources */,
+				5D59B696200F4C94002B4C23 /* MenuBarViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,10 +178,10 @@
 			files = (
 				5D880E82200DD5DA00D9CDF4 /* ViewController.swift in Sources */,
 				5D4E7F3F200E0D38009457F9 /* DeviceTypes.swift in Sources */,
+				5D59B697200F4C94002B4C23 /* MenuBarTableViewCell.swift in Sources */,
 				5D880E80200DD5DA00D9CDF4 /* AppDelegate.swift in Sources */,
+				5D59B695200F4C94002B4C23 /* MenuBarViewController.swift in Sources */,
 				5D880E88200DD5DA00D9CDF4 /* silde_menu.xcdatamodeld in Sources */,
-				5D59B68C200F4B92002B4C23 /* MenuBarTableViewCell.swift in Sources */,
-				5D59B68F200F4B92002B4C23 /* MenuBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

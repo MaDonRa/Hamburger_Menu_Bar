@@ -95,7 +95,7 @@ class MenuBarViewController: UIViewController {
         
         if gestureRecognizer.state == .ended {
             
-            guard self.MenuBackgroundView.frame.origin.x < -(self.MenuBackgroundView.frame.size.width / 3) else {
+            guard self.MenuBackgroundView.frame.origin.x < -(self.MenuBackgroundView.frame.size.width / 5) else {
                 self.MoveMenuBackToCenter()
                 return
             }
