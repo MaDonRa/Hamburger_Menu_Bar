@@ -10,16 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let Menu : MenuBarDelegate = MenuBarViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.red
+        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.Show)))
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    @objc func Show() {
 
+        self.Menu.SetupMenuBar(Controller: self, navigation: self.navigationController?.navigationBar)
+ 
+    }
 
 }
 
