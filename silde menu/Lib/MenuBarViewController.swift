@@ -26,11 +26,12 @@ class MenuBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UIApplication.shared.isStatusBarHidden = true
         self.view.backgroundColor = UIColor.clear
  
         self.SetupTableView()
         self.RegisterLocalNotifcation()
+        self.SetupShadowBackgroundView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -55,10 +56,8 @@ class MenuBarViewController: UIViewController {
     
     private func ShowMenuBar() {
         
-        UIView.animate(withDuration: 0.5, animations: {
-            self.MenuBackgroundView.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 2 , y: 0.0 )
-        }) { (done) in
-            self.SetupShadowBackgroundView()
+        UIView.animate(withDuration: 0.5) {
+            self.MenuBackgroundView.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 1.5 , y: 0.0 )
         }
     }
 
@@ -107,7 +106,7 @@ class MenuBarViewController: UIViewController {
 
     private func SetupNavigationBar() {
         UIView.animate(withDuration: 0.5) {
-            MenuBarViewController.CurrentNavigation.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 2 , y: 0.0 )
+            MenuBarViewController.CurrentNavigation.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 1.5 , y: 0.0 )
         }
     }
     
@@ -172,6 +171,7 @@ extension MenuBarViewController : MenuBarDelegate {
             MenuBarViewController.CurrentNavigation = nav
             self.SetupBlur(view : Controller.view)
             self.SetupNavigationBar()
+            UIApplication.shared.statusBarStyle = .lightContent
         }
     }
     
@@ -185,6 +185,7 @@ extension MenuBarViewController : MenuBarDelegate {
             MenuBarViewController.CurrentNavigation.transform = CGAffineTransform.identity
             MenuBarViewController.Blur.removeFromSuperview()
         }) { (done) in
+            UIApplication.shared.statusBarStyle = .default
             self.dismiss(animated: false, completion: nil)
         }
     }

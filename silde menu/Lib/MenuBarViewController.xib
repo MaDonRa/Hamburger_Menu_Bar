@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuBarViewController" customModule="silde_menu" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuBarViewController" customModule="Wala_R2" customModuleProvider="target">
             <connections>
                 <outlet property="BackgroundView" destination="7iF-cp-uy4" id="CzE-bm-gDp"/>
                 <outlet property="MenuBackgroundView" destination="9bo-6j-HLO" id="kqp-VS-Lze"/>
@@ -28,14 +28,14 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9bo-6j-HLO">
-                    <rect key="frame" x="-188" y="0.0" width="188" height="667"/>
+                    <rect key="frame" x="-250" y="0.0" width="250" height="667"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iL0-rG-oOO">
-                            <rect key="frame" x="0.0" y="167" width="188" height="500"/>
+                            <rect key="frame" x="0.0" y="167" width="250" height="500"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWW-cJ-9Lc">
-                            <rect key="frame" x="0.0" y="0.0" width="188" height="167"/>
+                            <rect key="frame" x="0.0" y="0.0" width="250" height="167"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
@@ -59,9 +59,9 @@
                 <constraint firstItem="7iF-cp-uy4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B3c-HQ-weE"/>
                 <constraint firstItem="7iF-cp-uy4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="B3j-BE-Apd"/>
                 <constraint firstItem="7iF-cp-uy4" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="X0s-sm-0ZD"/>
-                <constraint firstItem="9bo-6j-HLO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:2" id="XBJ-22-5yt"/>
+                <constraint firstItem="9bo-6j-HLO" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1:1.5" id="XBJ-22-5yt"/>
                 <constraint firstItem="9bo-6j-HLO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="obU-vs-N7g"/>
-                <constraint firstItem="9bo-6j-HLO" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="xUh-Y6-daL"/>
+                <constraint firstItem="9bo-6j-HLO" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="xUh-Y6-daL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
