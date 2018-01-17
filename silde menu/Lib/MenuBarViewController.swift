@@ -9,31 +9,31 @@
 import UIKit
 
 protocol MenuBarDelegate {
-    func SetupMenuBar(Controller: UIViewController , navigation : UINavigationBar?)
+    func SetupMenuBar(Controller: UIViewController , navigation : UINavigationController?)
     func Dismiss()
 }
 
 class MenuBarViewController: UIViewController {
-
+    
     @IBOutlet weak var MenuBackgroundView: UIView!
     @IBOutlet weak var BackgroundView: UIView!
-
+    
     @IBOutlet weak var MyTableView: UITableView!
     
     static let Blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.dark))
-
+    
+    static var CurrentNavigationController : UINavigationController!
     static var CurrentNavigation : UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.shared.isStatusBarHidden = true
         self.view.backgroundColor = UIColor.clear
- 
+        
         self.SetupTableView()
         self.RegisterLocalNotifcation()
         self.SetupShadowBackgroundView()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         
         self.ShowMenuBar()
@@ -44,7 +44,7 @@ class MenuBarViewController: UIViewController {
         self.BackgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MenuBarViewController.Dismiss)))
         self.view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
     }
-
+    
     private func SetupShadowBackgroundView() {
         
         self.MenuBackgroundView.layer.shadowColor = UIColor.black.cgColor
@@ -60,9 +60,9 @@ class MenuBarViewController: UIViewController {
             self.MenuBackgroundView.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 1.5 , y: 0.0 )
         }
     }
-
+    
     private func MoveMenuBackToCenter() {
-
+        
         UIView.animate(withDuration: 0.5, animations: {
             self.MenuBackgroundView.frame.origin.x = 0
             self.MoveNavigationBar(X: self.MenuBackgroundView.frame.maxX)
@@ -70,7 +70,7 @@ class MenuBarViewController: UIViewController {
     }
     
     private func MoveMenu(X : CGFloat) {
- 
+        
         if self.MenuBackgroundView.frame.origin.x > -(self.MenuBackgroundView.frame.size.width) && self.MenuBackgroundView.frame.origin.x < -1 {
             self.MenuBackgroundView.center = CGPoint(x: self.MenuBackgroundView.center.x + X , y: self.MenuBackgroundView.center.y)
         } else {
@@ -86,9 +86,9 @@ class MenuBarViewController: UIViewController {
     }
     
     @objc private func handlePan(_ gestureRecognizer: UIPanGestureRecognizer) {
-
+        
         if gestureRecognizer.state == .began || gestureRecognizer.state == .changed {
-
+            
             self.MoveMenu(X: gestureRecognizer.translation(in: self.view).x)
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
@@ -103,7 +103,7 @@ class MenuBarViewController: UIViewController {
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
     }
-
+    
     private func SetupNavigationBar() {
         UIView.animate(withDuration: 0.5) {
             MenuBarViewController.CurrentNavigation.transform = CGAffineTransform( translationX: ScreenSize.SCREEN_WIDTH / 1.5 , y: 0.0 )
@@ -120,50 +120,20 @@ class MenuBarViewController: UIViewController {
     private func MoveNavigationBar(X : CGFloat) {
         MenuBarViewController.CurrentNavigation.transform = CGAffineTransform( translationX: X , y: 0.0 )
     }
-}
-
-// ---------------------------------- TableView ----------------------------------
-
-extension MenuBarViewController : UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension MenuBarViewController : UITableViewDataSource {
-    
-    private func SetupTableView() {
-        self.MyTableView.delegate = self
-        self.MyTableView.dataSource = self
-        self.MyTableView.tableFooterView = UIView()
-        self.MyTableView.register(UINib(nibName: "MenuBarTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MenuBarTableViewCell else { return UITableViewCell() }
-        
-        cell.TextLabel.text = "eiei \(indexPath.row)"
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (ScreenSize.SCREEN_HEIGHT / 667) * 50
+    private func PushViewController(Viewcontroller : String) {
+        Dismiss()
+        MenuBarViewController.CurrentNavigationController?.pushViewController(UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: Viewcontroller), animated: true)
     }
 }
 
 // ---------------------------------- Delegate ----------------------------------
 
 extension MenuBarViewController : MenuBarDelegate {
-
-    func SetupMenuBar(Controller: UIViewController , navigation : UINavigationBar?) {
-        guard let nav = navigation else { return }
+    
+    func SetupMenuBar(Controller: UIViewController , navigation : UINavigationController?) {
+        MenuBarViewController.CurrentNavigationController = navigation
+        guard let nav = navigation?.navigationBar else { return }
         
         let MenuController = MenuBarViewController(nibName: "MenuBarViewController", bundle: nil)
         MenuController.modalPresentationStyle = .overCurrentContext
@@ -190,3 +160,53 @@ extension MenuBarViewController : MenuBarDelegate {
         }
     }
 }
+
+// ---------------------------------- TableView ----------------------------------
+
+extension MenuBarViewController : UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch indexPath.row {
+        case 0:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
+        default:
+            break
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension MenuBarViewController : UITableViewDataSource {
+    
+    private func SetupTableView() {
+        self.MyTableView.delegate = self
+        self.MyTableView.dataSource = self
+        self.MyTableView.tableFooterView = UIView()
+        self.MyTableView.register(UINib(nibName: "MenuBarTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MenuBarTableViewCell else { return UITableViewCell() }
+        
+        switch indexPath.row {
+        case 0:
+            cell.TextLabel.text = "Next Page"
+        default:
+            cell.TextLabel.text = "ไม่มี"
+        }
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return (ScreenSize.SCREEN_HEIGHT / 667) * 50
+    }
+}
+
+

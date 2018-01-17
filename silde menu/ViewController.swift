@@ -14,16 +14,26 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.red
+
+        self.SetupButtonOnNavigationBar()
+    }
+    
+    private func SetupButtonOnNavigationBar() {
         
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.Show)))
+        let LeftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        LeftButton.contentMode = .scaleAspectFit
+        LeftButton.addTarget(self, action: #selector(ViewController.MenuBar), for: .touchUpInside)
         
+        let MenuBarImage:UIImageView = UIImageView()
+        MenuBarImage.frame = LeftButton.frame
+        MenuBarImage.image = #imageLiteral(resourceName: "Icon_Menu")
+        LeftButton.addSubview(MenuBarImage)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView:LeftButton)
     }
 
-    @objc func Show() {
+    @objc func MenuBar() {
 
-        self.Menu.SetupMenuBar(Controller: self, navigation: self.navigationController?.navigationBar)
+        self.Menu.SetupMenuBar(Controller: self, navigation: self.navigationController)
  
     }
 

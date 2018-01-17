@@ -17,18 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image (53).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="cBe-vi-vSl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="cBe-vi-vSl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="JlK-dl-wut"/>
-                            <constraint firstItem="cBe-vi-vSl" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Vp2-ES-x0a"/>
-                            <constraint firstItem="cBe-vi-vSl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qIO-Yg-tr2"/>
-                            <constraint firstItem="cBe-vi-vSl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="z9Q-UF-QFm"/>
-                        </constraints>
+                        <color key="backgroundColor" red="1" green="0.19866550799999999" blue="0.086221299180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="VbZ-L3-UGr"/>
@@ -36,6 +25,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dug-N2-bAY">
+            <objects>
+                <viewController storyboardIdentifier="ABCDEFG" id="c6P-3f-J2v" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTQ-00-y2N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.46274509800000002" green="0.65098039220000004" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Vrb-Wy-NpK"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rac-kw-fTf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ufr-Gr-Jpo">
@@ -56,7 +60,4 @@
             <point key="canvasLocation" x="-246" y="133"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="image (53).jpg" width="986" height="1280"/>
-    </resources>
 </document>
