@@ -38,14 +38,7 @@ internal enum SelectRow:Int {
         }
     }
     
-    static var CurrentPage:Int {
-        get {
-            return UserDefaults.standard.integer(forKey: "CurrentPage")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "CurrentPage")
-        }
-    }
+    static var CurrentPage:Int = 0
 }
 
 class MenuBarViewController: UIViewController {
