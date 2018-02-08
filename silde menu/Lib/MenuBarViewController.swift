@@ -13,7 +13,7 @@ protocol MenuBarDelegate {
     func Dismiss()
 }
 
-internal enum SelectRow:Int {
+private enum SelectRow:Int {
     
     case News , Building , ServiceRequest , Product , Alert , Profile , LogOut
     
