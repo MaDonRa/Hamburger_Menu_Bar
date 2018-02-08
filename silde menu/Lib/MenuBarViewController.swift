@@ -13,6 +13,41 @@ protocol MenuBarDelegate {
     func Dismiss()
 }
 
+internal enum SelectRow:Int {
+    
+    case News , Building , ServiceRequest , Product , Alert , Profile , LogOut
+    
+    static var Count: Int { return SelectRow.LogOut.hashValue + 1}
+
+    var Text : String {
+        switch self {
+        case .News :
+            return "News"
+        case .Building :
+            return "Building"
+        case .ServiceRequest:
+            return "Service Request"
+        case .Product:
+            return "Product"
+        case .Alert:
+            return "Alert"
+        case .Profile:
+            return "My Profile"
+        case .LogOut:
+            return "Log Out"
+        }
+    }
+    
+    static var CurrentPage:Int {
+        get {
+            return UserDefaults.standard.integer(forKey: "CurrentPage")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "CurrentPage")
+        }
+    }
+}
+
 class MenuBarViewController: UIViewController {
     
     @IBOutlet weak var MenuBackgroundView: UIView!
@@ -167,12 +202,28 @@ extension MenuBarViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        switch indexPath.row {
-        case 0:
+        self.Dismiss()
+        
+        guard SelectRow.CurrentPage != indexPath.row , let row = SelectRow(rawValue: indexPath.row) else { return }
+        
+        switch row {
+        case .News:
+            MenuBarViewController.CurrentNavigationController.popToRootViewController(animated: true)
+        case .Building:
             self.PushViewController(Viewcontroller: "ABCDEFG")
-        default:
-            break
+        case .ServiceRequest:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
+        case .Product:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
+        case .Alert:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
+        case .Profile:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
+        case .LogOut:
+            self.PushViewController(Viewcontroller: "ABCDEFG")
         }
+        
+        SelectRow.CurrentPage = row.hashValue
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -188,19 +239,14 @@ extension MenuBarViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return SelectRow.Count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MenuBarTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? MenuBarTableViewCell , let row = SelectRow(rawValue: indexPath.row) else { return UITableViewCell() }
         
-        switch indexPath.row {
-        case 0:
-            cell.TextLabel.text = "Next Page"
-        default:
-            cell.TextLabel.text = "ไม่มี"
-        }
-
+        cell.TextLabel.text = row.Text
+    
         return cell
     }
     
