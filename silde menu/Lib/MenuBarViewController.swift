@@ -183,6 +183,7 @@ extension MenuBarViewController : MenuBarDelegate {
             MenuBarViewController.CurrentNavigation.transform = CGAffineTransform.identity
             MenuBarViewController.Blur.removeFromSuperview()
         }) { (done) in
+            MenuBarViewController.CurrentNavigation.transform = CGAffineTransform.identity
             UIApplication.shared.statusBarStyle = .default
             self.dismiss(animated: false, completion: nil)
         }
