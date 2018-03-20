@@ -12,6 +12,8 @@ class MainNavigation: UINavigationController , UINavigationControllerDelegate {
 
     let Menu : MenuBarDelegate = MenuBarViewController()
     
+    static var BackButton : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self;
@@ -23,6 +25,10 @@ class MainNavigation: UINavigationController , UINavigationControllerDelegate {
     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        let BackButton = UIBarButtonItem()
+        BackButton.title = ""
+        viewController.navigationItem.backBarButtonItem = BackButton
+        guard !MainNavigation.BackButton else { return }
         let LeftButton = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         LeftButton.contentMode = .scaleAspectFit
         LeftButton.addTarget(self, action: #selector(MainNavigation.MenuBar), for: .touchUpInside)
