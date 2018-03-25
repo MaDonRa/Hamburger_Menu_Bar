@@ -383,13 +383,13 @@ extension MenuBarViewController : UITableViewDelegate {
                 case .TimeAttendance:
                 PushViewController(Viewcontroller: "ABCDEFG")
                 case .Appointment:
-                break
+                PushViewController(Viewcontroller: "ABCDEFG")
             }
         case .Manager:
             guard let row  = ManagerRow(rawValue: indexPath.row) else { return }
             switch row {
             case .Request:
-                break
+                PushViewController(Viewcontroller: "ABCDEFG")
             case .ManageTeam:
                 PushViewController(Viewcontroller: "ABCDEFG")
             }
@@ -401,7 +401,7 @@ extension MenuBarViewController : UITableViewDelegate {
             case .RoomBooking:
                 PushViewController(Viewcontroller: "ABCDEFG")
             case .Staff:
-                break
+                PushViewController(Viewcontroller: "ABCDEFG")
             case .Setting:
                 PushViewController(Viewcontroller: "ABCDEFG")
             }
