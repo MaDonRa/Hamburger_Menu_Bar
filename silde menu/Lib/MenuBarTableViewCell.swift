@@ -10,17 +10,28 @@ import UIKit
 
 class MenuBarTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var IconImageView: UIImageView!
     @IBOutlet weak var TextLabel: UILabel!
     
+    @IBOutlet weak var BackgroundBadgeView: UIView!
+    @IBOutlet weak var BadgeLabel: UILabel!
+    
+    private let Font = ResizeFont()
+    
     override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        Font.LabelFontSizeArray([TextLabel,
+                                 BadgeLabel])
+        
+        self.TextLabel.isHidden = true
+        self.IconImageView.isHidden = true
+        self.BackgroundBadgeView.isHidden = true
+        self.BadgeLabel.isHidden = true
+        
+        self.BackgroundBadgeView.layer.masksToBounds = true
+        self.BackgroundBadgeView.layer.cornerRadius = (((ScreenSize.SCREEN_HEIGHT/667) * 50)/2.5) / 2.0
     }
     
+    override func prepareForReuse() {
+        self.IconImageView.image = nil
+    }
 }
