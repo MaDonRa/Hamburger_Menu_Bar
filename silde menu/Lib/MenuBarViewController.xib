@@ -41,7 +41,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo_Background_Menu_Bar" translatesAutoresizingMaskIntoConstraints="NO" id="PIx-i5-vJi">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="167"/>
                                 </imageView>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo_User" translatesAutoresizingMaskIntoConstraints="NO" id="zRw-Ko-lw7">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zRw-Ko-lw7">
                                     <rect key="frame" x="10" y="37" width="83.5" height="83.5"/>
                                     <color key="backgroundColor" red="0.32040655610000002" green="0.83762127159999999" blue="0.9885430932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -113,6 +113,5 @@
     </objects>
     <resources>
         <image name="Photo_Background_Menu_Bar" width="700" height="396"/>
-        <image name="Photo_User" width="75" height="75"/>
     </resources>
 </document>
