@@ -178,7 +178,7 @@ class MenuBarViewController: UIViewController {
     static var CurrentNavigationController : UINavigationController!
     static var CurrentNavigation : UINavigationBar!
     
-    static var CurrentPage = [Int]()
+    static var CurrentPage : [Int] = [HeaderRow.Staff.hashValue,StaffRow.ClockInClockOut.hashValue]
     
     private let Font = ResizeFont()
 
