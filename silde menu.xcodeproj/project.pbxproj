@@ -19,7 +19,6 @@
 		5D880E85200DD5DA00D9CDF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D880E83200DD5DA00D9CDF4 /* Main.storyboard */; };
 		5D880E8A200DD5DA00D9CDF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D880E89200DD5DA00D9CDF4 /* Assets.xcassets */; };
 		5D880E8D200DD5DA00D9CDF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D880E8B200DD5DA00D9CDF4 /* LaunchScreen.storyboard */; };
-		5DB6D91720680E3D005ED656 /* CacheEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D91620680E3D005ED656 /* CacheEntity.swift */; };
 		5DB6D91920680E74005ED656 /* ResizeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D91820680E73005ED656 /* ResizeFont.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		5D880E89200DD5DA00D9CDF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D880E8C200DD5DA00D9CDF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D880E8E200DD5DA00D9CDF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5DB6D91620680E3D005ED656 /* CacheEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheEntity.swift; sourceTree = "<group>"; };
 		5DB6D91820680E73005ED656 /* ResizeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,7 +66,6 @@
 		5D59B67C200F3CD4002B4C23 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5DB6D91620680E3D005ED656 /* CacheEntity.swift */,
 				5DB6D91820680E73005ED656 /* ResizeFont.swift */,
 				5D4E7F3E200E0D38009457F9 /* DeviceTypes.swift */,
 			);
@@ -187,7 +184,6 @@
 				5D6CE53E20688B14002B36EA /* ABCDEFViewController.swift in Sources */,
 				5D59B697200F4C94002B4C23 /* MenuBarTableViewCell.swift in Sources */,
 				5D880E80200DD5DA00D9CDF4 /* AppDelegate.swift in Sources */,
-				5DB6D91720680E3D005ED656 /* CacheEntity.swift in Sources */,
 				5DB6D91920680E74005ED656 /* ResizeFont.swift in Sources */,
 				5D59B695200F4C94002B4C23 /* MenuBarViewController.swift in Sources */,
 			);

@@ -10,10 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    private let Cache = CacheEntity()
-    
     override func viewWillAppear(_ animated: Bool) {
-        self.Cache.CurrentPage = [HeaderRow.Staff.hashValue,StaffRow.ClockInClockOut.hashValue]
+        MenuBarViewController.CurrentPage = [HeaderRow.Staff.hashValue,StaffRow.ClockInClockOut.hashValue]
     }
 }
 

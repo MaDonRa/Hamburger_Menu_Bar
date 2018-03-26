@@ -178,8 +178,9 @@ class MenuBarViewController: UIViewController {
     static var CurrentNavigationController : UINavigationController!
     static var CurrentNavigation : UINavigationBar!
     
+    static var CurrentPage = [Int]()
+    
     private let Font = ResizeFont()
-    private let Cache = CacheEntity()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -370,7 +371,7 @@ extension MenuBarViewController : UITableViewDelegate {
         
         self.Dismiss()
         
-        guard Cache.CurrentPage != [indexPath.section,indexPath.row] , let Header = HeaderRow(rawValue: indexPath.section) else { return }
+        guard MenuBarViewController.CurrentPage != [indexPath.section,indexPath.row] , let Header = HeaderRow(rawValue: indexPath.section) else { return }
         
         switch Header {
         case .Staff:
@@ -407,7 +408,7 @@ extension MenuBarViewController : UITableViewDelegate {
             }
         }
         
-        Cache.CurrentPage = [indexPath.section,indexPath.row]
+        MenuBarViewController.CurrentPage = [indexPath.section,indexPath.row]
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -505,7 +506,7 @@ extension MenuBarViewController : UITableViewDataSource {
             cell.TextLabel.text = row.Text
         }
 
-        guard Cache.CurrentPage == [indexPath.section,indexPath.row] else {
+        guard MenuBarViewController.CurrentPage == [indexPath.section,indexPath.row] else {
             cell.contentView.backgroundColor = UIColor.groupTableViewBackground
             return cell
         }
