@@ -68,6 +68,8 @@
 		5D59B67C200F3CD4002B4C23 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				5DB6D91620680E3D005ED656 /* CacheEntity.swift */,
+				5DB6D91820680E73005ED656 /* ResizeFont.swift */,
 				5D4E7F3E200E0D38009457F9 /* DeviceTypes.swift */,
 			);
 			path = Helper;
@@ -96,7 +98,6 @@
 				5D880E81200DD5DA00D9CDF4 /* ViewController.swift */,
 				5D7162E4205FC859000E8EB5 /* MainNavigation.swift */,
 				5D6CE53D20688B14002B36EA /* ABCDEFViewController.swift */,
-				5DB6D91C20680ECF005ED656 /* Helper */,
 				5D4E7F4B200F1C0A009457F9 /* Lib */,
 				5D880E83200DD5DA00D9CDF4 /* Main.storyboard */,
 				5D880E89200DD5DA00D9CDF4 /* Assets.xcassets */,
@@ -104,15 +105,6 @@
 				5D880E8E200DD5DA00D9CDF4 /* Info.plist */,
 			);
 			path = "silde menu";
-			sourceTree = "<group>";
-		};
-		5DB6D91C20680ECF005ED656 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				5DB6D91620680E3D005ED656 /* CacheEntity.swift */,
-				5DB6D91820680E73005ED656 /* ResizeFont.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
