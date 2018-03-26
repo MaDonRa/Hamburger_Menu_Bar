@@ -302,8 +302,6 @@ extension MenuBarViewController {
     private func LocalProfile() {
         self.UserNameLabel.text = "User : Guest"
         self.UserEmailLabel.text = "test_123@hotmail.com"
-        
-        
         self.UserImageView.image = #imageLiteral(resourceName: "Photo_RoomBooking_People")
     }
     
@@ -408,7 +406,7 @@ extension MenuBarViewController : UITableViewDelegate {
         }
         
         Cache.CurrentPage = [indexPath.section,indexPath.row]
-   
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

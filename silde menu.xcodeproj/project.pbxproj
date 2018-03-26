@@ -21,8 +21,6 @@
 		5D880E8D200DD5DA00D9CDF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D880E8B200DD5DA00D9CDF4 /* LaunchScreen.storyboard */; };
 		5DB6D91720680E3D005ED656 /* CacheEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D91620680E3D005ED656 /* CacheEntity.swift */; };
 		5DB6D91920680E74005ED656 /* ResizeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D91820680E73005ED656 /* ResizeFont.swift */; };
-		5DB6D91B20680EC9005ED656 /* ImageFromDocumentsDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D91A20680EC9005ED656 /* ImageFromDocumentsDirectory.swift */; };
-		5DB6D92120680FC7005ED656 /* OutOfRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6D92020680FC7005ED656 /* OutOfRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +40,6 @@
 		5D880E8E200DD5DA00D9CDF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DB6D91620680E3D005ED656 /* CacheEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheEntity.swift; sourceTree = "<group>"; };
 		5DB6D91820680E73005ED656 /* ResizeFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeFont.swift; sourceTree = "<group>"; };
-		5DB6D91A20680EC9005ED656 /* ImageFromDocumentsDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFromDocumentsDirectory.swift; sourceTree = "<group>"; };
-		5DB6D92020680FC7005ED656 /* OutOfRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutOfRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +111,6 @@
 			children = (
 				5DB6D91620680E3D005ED656 /* CacheEntity.swift */,
 				5DB6D91820680E73005ED656 /* ResizeFont.swift */,
-				5DB6D91A20680EC9005ED656 /* ImageFromDocumentsDirectory.swift */,
-				5DB6D92020680FC7005ED656 /* OutOfRange.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -203,9 +197,7 @@
 				5DB6D91720680E3D005ED656 /* CacheEntity.swift in Sources */,
 				5DB6D91920680E74005ED656 /* ResizeFont.swift in Sources */,
 				5D59B695200F4C94002B4C23 /* MenuBarViewController.swift in Sources */,
-				5DB6D91B20680EC9005ED656 /* ImageFromDocumentsDirectory.swift in Sources */,
 				5D880E88200DD5DA00D9CDF4 /* silde_menu.xcdatamodeld in Sources */,
-				5DB6D92120680FC7005ED656 /* OutOfRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
