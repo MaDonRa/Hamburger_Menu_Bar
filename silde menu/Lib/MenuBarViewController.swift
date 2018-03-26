@@ -32,11 +32,11 @@ public enum HeaderRow : Int {
     var Status : Bool {
         switch self {
         case .Staff :
-            return StaffRow(rawValue: 0)?.Status ?? false || StaffRow(rawValue: 1)?.Status ?? false
+            return StaffRow(rawValue: 0)?.Status ?? false || StaffRow(rawValue: 1)?.Status ?? false || StaffRow(rawValue: 2)?.Status ?? false
         case .Manager :
             return ManagerRow(rawValue: 0)?.Status ?? false || ManagerRow(rawValue: 1)?.Status ?? false
         case .General :
-            return GeneralRow(rawValue: 0)?.Status ?? false || GeneralRow(rawValue: 1)?.Status ?? false
+            return GeneralRow(rawValue: 0)?.Status ?? false || GeneralRow(rawValue: 1)?.Status ?? false || GeneralRow(rawValue: 2)?.Status ?? false || GeneralRow(rawValue: 3)?.Status ?? false
         }
     }
 }
@@ -387,8 +387,10 @@ extension MenuBarViewController : UITableViewDelegate {
             guard let row  = ManagerRow(rawValue: indexPath.row) else { return }
             switch row {
             case .Request:
+                MainNavigation.BackButton = false
                 PushViewController(Viewcontroller: "ABCDEFG")
             case .ManageTeam:
+                MainNavigation.BackButton = false
                 PushViewController(Viewcontroller: "ABCDEFG")
             }
         case .General:

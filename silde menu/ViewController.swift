@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let Cache = CacheEntity()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.Cache.CurrentPage = [HeaderRow.Staff.hashValue,StaffRow.ClockInClockOut.hashValue]
     }
 }
 
