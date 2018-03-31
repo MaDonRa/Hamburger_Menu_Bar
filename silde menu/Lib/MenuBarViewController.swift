@@ -412,6 +412,29 @@ extension MenuBarViewController : UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard section != 0 , let Header = HeaderRow(rawValue: section) else { return 0.1 }
+        return Header.Status ? ScreenSize.SCREEN_HEIGHT/50 : 0.1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        guard section != 0 , let Header = HeaderRow(rawValue: section) , Header.Status else { return nil }
+        
+        let BackgroundView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.SCREEN_WIDTH/1.5, height: ScreenSize.SCREEN_HEIGHT/50))
+        BackgroundView.backgroundColor = UIColor.clear
+        
+        let Line:UIView = UIView(frame: CGRect(x: 30, y: (BackgroundView.frame.size.height/2), width: BackgroundView.frame.size.width-60, height: 1))
+        Line.backgroundColor = UIColor.gray
+        BackgroundView.addSubview(Line)
+        
+        return BackgroundView
+    }
 }
 
 extension MenuBarViewController : UITableViewDataSource {
@@ -426,29 +449,6 @@ extension MenuBarViewController : UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return HeaderRow.Count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        guard section != 0 , let Header = HeaderRow(rawValue: section) else { return 0.1 }
-        return Header.Status ? ScreenSize.SCREEN_HEIGHT/50 : 0.1
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.1
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        guard section != 0 , let Header = HeaderRow(rawValue: section) , Header.Status else { return nil }
-
-        let BackgroundView:UIView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenSize.SCREEN_WIDTH/1.5, height: ScreenSize.SCREEN_HEIGHT/50))
-        BackgroundView.backgroundColor = UIColor.clear
-
-        let Line:UIView = UIView(frame: CGRect(x: 30, y: (BackgroundView.frame.size.height/2), width: BackgroundView.frame.size.width-60, height: 1))
-        Line.backgroundColor = UIColor.gray
-        BackgroundView.addSubview(Line)
-
-        return BackgroundView
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
